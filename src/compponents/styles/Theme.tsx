@@ -3,9 +3,9 @@
     colors: {
         primaryBg: '#1A1A29',
         secondaryBgFormCards: '#31313F',
-        colorAkcentPurple: '#7562E0',
+        colorPurpleAct: '#7562E0',
         colorForItem: '#BDBDBD',
-        fontColor: '#FFF'
+        fontColor: '#FFFFFF'
     }
 }
 

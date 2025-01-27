@@ -14,7 +14,7 @@ export const Footer = () => {
 
                     <StyledFooterContact>
                         <TitleSection textTitle={'Connect with me:'}/>
-                        <TextComponent fontSize={'18px'} textComponentP={'Satisfied with me? Please contact me:'}/>
+                        <TextComponent  textComponentP={'Satisfied with me? Please contact me:'}/>
                         <SocialIconList>
                             <SocialIconLink>
                                 <SocialIconItem>
@@ -27,7 +27,7 @@ export const Footer = () => {
                     </StyledFooterContact>
 
                     <StyledFooterForm>
-                        <TextComponent textComponentP={'Contact me, let’s make magic together:'} fontSize={'24px'}
+                        <TextComponent textComponentP={'Contact me, let’s make magic together:'}
                                        fontWeight={'700'}/>
                         <Form/>
                     </StyledFooterForm>
