@@ -58,9 +58,8 @@ const StyledSpanP = styled.span`
     color: #fff;
     display: flex;
     align-items: flex-start;
-
 `
 const AboutMeStyled = styled.section`
-    margin-bottom: 80px;
+    
 `
 

@@ -19,6 +19,10 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: 400;
         font-style: normal;
     }
+    
+    section {
+        margin-bottom: 100px;
+    }
 
     h1, h2, h3, h4, h5, h6, p {
         font-size: inherit;

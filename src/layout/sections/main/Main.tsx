@@ -9,9 +9,11 @@ import {ContainerStyled} from "../../../compponents/container/Container.styled.t
 
 export const Main = () => {
     const [offsetY, setOffsetY] = useState(0);
+    const [opacity, setOpacity] = useState(1);
 
     const handleScroll = () => {
         setOffsetY(window.scrollY);
+        setOpacity(Math.max(1 - window.scrollY / 500, 0)); // Зменшення прозорості при прокрутці
     };
 
     useEffect(() => {
@@ -54,7 +56,11 @@ export const Main = () => {
                         <StyledPhotoBg
                             src={bgImg}
                             alt="photo"
-                            style={{ transform: `translate(10%, calc(-40% + ${offsetY * 0.3}px))`, transition: "transform 0.2s ease-out" }}
+                            style={{
+                                transform: `translate(10%, calc(-40% + ${offsetY * 0.3}px))`,
+                                opacity: opacity,
+                                transition: "transform 0.2s ease-out, opacity 0.5s ease-out"
+                            }}
                         />
                     </StyledBoxImg>
                 </FlexWrapper>
@@ -62,12 +68,6 @@ export const Main = () => {
         </StyledMain>
     );
 };
-
-
-
-
-
-
 
 const StyledMain = styled.main`
     padding-top: 200px;
@@ -81,7 +81,7 @@ const StyledMain = styled.main`
             background-color: #181824;
             bottom: 10%;
             transform: translate(0%, 18%);
-            z-index: 33 !important;
+            z-index: 33;
             position: absolute;
         }
     margin-bottom: 80px;
