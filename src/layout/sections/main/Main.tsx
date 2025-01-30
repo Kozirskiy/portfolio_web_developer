@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import {FlexWrapper} from "../../../compponents/FlexWrapper.tsx";
 import photo from '../../../assets/images/photoDinero.webp'
@@ -7,52 +8,62 @@ import {Icon} from "../../../compponents/icon/Icon.tsx";
 import {ContainerStyled} from "../../../compponents/container/Container.styled.tsx";
 
 export const Main = () => {
+    const [offsetY, setOffsetY] = useState(0);
+
+    const handleScroll = () => {
+        setOffsetY(window.scrollY);
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
         <StyledMain>
             <ContainerStyled>
                 <FlexWrapper align={'center'}>
                     <StyledOfferInfo>
-
                         <FlexWrapper direction={'column'} align={'start'}>
-                            <MainSpan>
-                                Hello, i’m
-                            </MainSpan>
-
-                            <MainH2>
-                                Oleksandr Kozyrskyi
-                            </MainH2>
+                            <MainSpan>Hello, i’m</MainSpan>
+                            <MainH2>Oleksandr Kozyrskyi</MainH2>
                             <div>
-                                <StyledH1>
-                                    Web developer. I have huge web experiences.
-                                </StyledH1>
+                                <StyledH1>Web developer. I have seamless web experiences.</StyledH1>
                             </div>
 
                             <StyledBoxBtn>
-                                <StyledBtn alingBtn={'center'} justifyBtn={'center'} widthBnt={'180px'} primary={true}
-                                           fontSize={'16px'}>About me<StyledSpan><Icon
-                                    iconId={'userIconHeaderButnSVG'} width="24" height="24"
-                                    viewBox="0 0 24 24"/></StyledSpan></StyledBtn>
+                                <StyledBtn alingBtn={'center'} justifyBtn={'center'} widthBnt={'180px'} primary={true} fontSize={'16px'}>
+                                    About me
+                                    <StyledSpan>
+                                        <Icon iconId={'userIconHeaderButnSVG'} width="24" height="24" viewBox="0 0 24 24"/>
+                                    </StyledSpan>
+                                </StyledBtn>
 
-                                <StyledBtn alingBtn={'center'} justifyBtn={'center'} widthBnt={'180px'} outline={true}
-                                           fontSize={'16px'}>Projects<StyledSpan><Icon
-                                    iconId={'eyeIconHeaderEyeSVG'} width="24" height="24"
-                                    viewBox="0 0 24 24"/></StyledSpan> </StyledBtn>
+                                <StyledBtn alingBtn={'center'} justifyBtn={'center'} widthBnt={'180px'} outline={true} fontSize={'16px'}>
+                                    Projects
+                                    <StyledSpan>
+                                        <Icon iconId={'eyeIconHeaderEyeSVG'} width="24" height="24" viewBox="0 0 24 24"/>
+                                    </StyledSpan>
+                                </StyledBtn>
                             </StyledBoxBtn>
                         </FlexWrapper>
-
-
                     </StyledOfferInfo>
 
                     <StyledBoxImg>
-                        <StyledPhoto src={photo} alt="photo OK"/>
-                        <StyledPhotoBg src={bgImg} alt="photo"/>
+                        <StyledPhoto src={photo} alt="photo OK" />
+                        <StyledPhotoBg
+                            src={bgImg}
+                            alt="photo"
+                            style={{ transform: `translate(10%, calc(-40% + ${offsetY * 0.3}px))`, transition: "transform 0.2s ease-out" }}
+                        />
                     </StyledBoxImg>
                 </FlexWrapper>
             </ContainerStyled>
         </StyledMain>
     );
-
 };
+
+
 
 
 
