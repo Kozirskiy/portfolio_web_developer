@@ -18,7 +18,6 @@ export const GlobalStyles = createGlobalStyle`
         font-family: "Poppins", serif;
         font-weight: 400;
         font-style: normal;
-        line-height: 1.2;
     }
 
     h1, h2, h3, h4, h5, h6, p {
