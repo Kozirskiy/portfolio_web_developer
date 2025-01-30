@@ -1,8 +1,6 @@
 import styled from "styled-components";
-// import {TitleSectionStyled} from "../../../compponents/title/TitleSection.tsx";
 import {TextComponent} from "../../../compponents/textComponent/TextComponent.tsx";
 import {FlexWrapper} from "../../../compponents/FlexWrapper.tsx";
-// import {Icon} from "../../../compponents/icon/Icon.tsx";
 import {ItemAbout} from "../../../compponents/itemAbout/ItemAbout.tsx";
 import {ContainerStyled} from "../../../compponents/container/Container.styled.tsx";
 import {TitleSection} from "../../../compponents/title/TitleSection.tsx";
@@ -13,13 +11,8 @@ export const AboutMe = () => {
             <AboutMeStyled>
                 <ContainerStyled>
                     <TitleSection textTitle={'About me:'}/>
-                    <TextComponent fontSizeText={'18px'}
-                                   textComponentP={'Hi, my name is Oleksandr Kozyrskyi, i am a web developer.'}/>
-
-                    <FlexWrapper align={'center'}>
-
-                        {/*<TextComponent fontSizeText={'96px'} fontWeight={'800'}*/}
-                        {/*               colorText={'#7562E0'}/>*/}
+                    <TextComponent textComponentP={'Hi, my name is Oleksandr Kozyrskyi, i am a Fullstack web developer'}/>
+                    <FlexWrapper align={'center'} marginBottomStyle={'25px'}>
 
                         <StyledSpan>5+</StyledSpan>
                         <StyledSpanP>Years of experience. Specialised in building apps, while ensuring a seamless web
@@ -49,17 +42,24 @@ export const AboutMe = () => {
 
 const StyledSpan = styled.span`
     font-size: 96px;
-    font-weight: 800;
+    font-weight: 600;
     color: #7562E0;
+    margin-right: 22px;
 `
+
 const StyledSpanP = styled.span`
     font-size: 24px;
     font-weight: 400;
     color: #fff;
     display: flex;
+    text-align: start;
     align-items: flex-start;
 `
 const AboutMeStyled = styled.section`
+    
+    p {
+        font-size: 18px;
+    }
     
 `
 

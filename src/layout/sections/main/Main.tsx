@@ -118,7 +118,6 @@ const StyledPhoto = styled.img`
     left: 50%;
     transform: translate(19%, -50%); /* Центрує зображення */
     height: auto;
-    
 `
 const StyledPhotoBg = styled.img`
     display: block;

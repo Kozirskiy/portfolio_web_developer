@@ -19,6 +19,8 @@ export const Projects = () => {
                 <TitleSection textTitle={'Projects:'}/>
 
                 <TextComponent marginBottomTextComponent={'36px'}
+                               fontSizeTextText={'18px'}
+
                                textComponentP={'I have worked on many projects over the course of being a Web Developer, here are a few of my live, real-world projects'}/>
                 <FlexWrapper justify={'space-between'}>
 
@@ -47,7 +49,7 @@ export const Projects = () => {
 };
 
 export const StyledProjects = styled.section`
-    margin-bottom: 80px;
+    
 `
 
 

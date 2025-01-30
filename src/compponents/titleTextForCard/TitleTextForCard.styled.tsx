@@ -4,7 +4,7 @@ type TitleTextForCardStyledProsType = {
     marginBottom?: string
     marginTopTitle?: string
     fontSizeText?: string
-    fontWeihtText?: string
+    fontWeightText?: string
     colorText?: string
 }
 export const TitleTextForCardStyled = styled.h3<TitleTextForCardStyledProsType>`
@@ -12,7 +12,7 @@ export const TitleTextForCardStyled = styled.h3<TitleTextForCardStyledProsType>`
     margin-bottom: ${props => props.marginBottom};
     margin-top: ${props => props.marginTopTitle || '12px'};
     font-size: ${props => props.fontSizeText || '24px'};
-    font-weight: ${props => props.fontWeihtText || '600'};
+    font-weight: ${props => props.fontWeightText || '600'};
     color: ${props => props.colorText || '#fff'};
     
 `

@@ -14,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
 
     body {
         background-color: #1A1A29;
+        font-size: 18px;
         color: ${theme.colors.fontColor};
         font-family: "Poppins", serif;
         font-weight: 400;
@@ -76,6 +77,10 @@ export const GlobalStyles = createGlobalStyle`
     button:focus, button:active {
         outline: none;
     }
+     p {
+         line-height: 1.4;
+         font-size: 18px;
+     }
 
 
     // from site about

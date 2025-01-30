@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 type TextComponentPropsType = {
-    fontSizeText?: string
+    fontSizeTextText?: string
     colorText?: string
     fontWeight?: string
     textComponentP?: string
     marginBottomTextComponent?: string
-
 }
 
 export const TextComponent = (props: TextComponentPropsType) => {
@@ -17,14 +16,11 @@ export const TextComponent = (props: TextComponentPropsType) => {
     );
 };
 
-// export const TextComponent = styled.p`
-//
-// `
-
 const StyledTextComponent = styled.p<TextComponentPropsType>`
-    font-size: ${props => props.fontSizeText || '18px'};
     color: ${props => props.colorText || '#ffffff'};
+    font-size: ${props => props.fontSizeTextText || undefined};
+    line-height: 1.4;
     font-weight: ${props => props.fontWeight || '400'};
-    margin-bottom: ${props => props.marginBottomTextComponent || '30px'};
-   
+    margin-bottom: ${props => props.marginBottomTextComponent || undefined};
 `
+
