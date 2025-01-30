@@ -10,6 +10,7 @@ import {ContainerStyled} from "../../../compponents/container/Container.styled.t
 export const Main = () => {
     const [offsetY, setOffsetY] = useState(0);
     const [opacity, setOpacity] = useState(1);
+    const [loading, setLoading] = useState(true);
 
     const handleScroll = () => {
         setOffsetY(window.scrollY);
@@ -18,8 +19,17 @@ export const Main = () => {
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
+        setTimeout(() => setLoading(false), 1500); // Симуляція завантаження
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    if (loading) {
+        return (
+            <PreloaderWrapper>
+                <Loader />
+            </PreloaderWrapper>
+        );
+    }
 
     return (
         <StyledMain>
@@ -68,6 +78,34 @@ export const Main = () => {
         </StyledMain>
     );
 };
+
+const PreloaderWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(24, 24, 36);
+
+`;
+
+const Loader = styled.div`
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgb(255, 255, 255);
+    border-top: 5px solid #413880;
+    border-radius: 50%;
+    animation: spin 0.5s linear infinite;
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+`;
+
 
 const StyledMain = styled.main`
     padding-top: 200px;

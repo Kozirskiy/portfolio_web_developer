@@ -81,38 +81,17 @@ export const GlobalStyles = createGlobalStyle`
          line-height: 1.4;
          font-size: 18px;
      }
+    img, svg {
+        max-width: 100%;
+        height: auto;
+    }
 
 
     // from site about
 
 
-    /* Reset and base styles  */
-    //* {
-    //    padding: 0px;
-    //    margin: 0px;
-    //    border: none;
-    //}
-    //
-    //*,
-    //*::before,
-    //*::after {
-    //    box-sizing: border-box;
-    //}
-
-    /* Links */
-
-
-    //
-
-
     /* Common */
 
-    //aside, nav, footer, header, section, main {
-    //    display: block;
-    //}
-    //
-    
-    //
     //ul, ul li {
     //    list-style: none;
     //}
