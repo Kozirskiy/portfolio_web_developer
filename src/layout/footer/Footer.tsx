@@ -27,7 +27,7 @@ export const Footer = () => {
                     </StyledFooterContact>
 
                     <StyledFooterForm>
-                        <TextComponent textComponentP={'Contact me, let’s make magic together:'}
+                        <TextComponent textComponentP={'Contact me, let’s make Magic together:'}
                                        fontWeight={'700'}/>
                         <Form/>
                     </StyledFooterForm>

@@ -28,7 +28,13 @@ const StyledHeader = styled.header`
     margin-bottom: 115px;
     align-items: center;
     padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
 `
+
 
 
 

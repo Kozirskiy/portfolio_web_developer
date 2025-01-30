@@ -40,15 +40,19 @@ const StyledItemSkill = styled.div`
         transition: 2s;
         cursor: pointer;
         border-radius: 5px;
-    };
-
-    
-     nth-of_type(odd) {
-        border: 3px solid #F5F5F5;
-    } 
-    nth-of_type(even) {
-        border: 3px solid #7562E0;
     }
+;
+
+&+& {
+    
+}
+nth-of_type(odd) {
+    border: 3px solid #F5F5F5;
+} nth-of_type(even) {
+    border: 3px solid #7562E0;
+}
+
+
 
 `
 
