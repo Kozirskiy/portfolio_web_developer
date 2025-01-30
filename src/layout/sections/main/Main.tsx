@@ -23,7 +23,7 @@ export const Main = () => {
                             </MainH2>
                             <div>
                                 <StyledH1>
-                                    Web developer. I have seamless web experiences.
+                                    Web developer. I have huge web experiences.
                                 </StyledH1>
                             </div>
 
