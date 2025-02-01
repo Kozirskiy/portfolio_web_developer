@@ -19,12 +19,12 @@ export const Project = (props: ProjectStyledProps) => {
 
                 </StyledImg>
 
-                <TitleTextForCardStyled fontSizeText={'24px'} colorText={'#7562E0'} fontWeihtText={'600'}>
+                <TitleTextForCardStyled fontSizeText={'24px'} colorText={'#7562E0'} >
                     {props.projectTitle}
                 </TitleTextForCardStyled>
 
 
-                <TitleTextForCardStyled widthTitle={'287px'} fontSizeText={'18px'} marginBottom={'24px'} fontWeihtText={'400'}>
+                <TitleTextForCardStyled widthTitle={'287px'} fontSizeText={'18px'} marginBottom={'24px'} >
                     {props.projectText}
                 </TitleTextForCardStyled>
 
@@ -58,5 +58,6 @@ const StyledImg = styled.img`
     &:hover {
         opacity: 100%;
         transition: 2s;
+        cursor: pointer;
     }
 `

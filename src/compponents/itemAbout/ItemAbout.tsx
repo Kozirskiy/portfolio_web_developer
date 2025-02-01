@@ -27,7 +27,6 @@ export const ItemAbout = (props: ItemAboutPropsType) => {
 };
 
 const StyledItemAbout = styled.div`
-    margin-right: 20px;
     text-transform: uppercase;
     background-color: #BDBDBD;
     

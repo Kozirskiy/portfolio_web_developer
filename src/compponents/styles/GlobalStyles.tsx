@@ -1,5 +1,6 @@
 import {createGlobalStyle} from "styled-components";
-import theme from "./Theme.tsx";
+import {themeForProject} from "./Theme.tsx";
+
 
 
 export const GlobalStyles = createGlobalStyle`
@@ -13,9 +14,9 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        background-color: #1A1A29;
+        background-color: ${themeForProject.colors.primaryBg};
         font-size: 18px;
-        color: ${theme.colors.fontColor};
+        color: ${themeForProject.colors.colorPurpleAct};
         font-family: "Poppins", serif;
         font-weight: 400;
         font-style: normal;
@@ -69,7 +70,6 @@ export const GlobalStyles = createGlobalStyle`
         display: inline-block;
         box-shadow: none;
         background-color: unset;
-        background: none;
         cursor: pointer;
     }
 
@@ -81,10 +81,6 @@ export const GlobalStyles = createGlobalStyle`
          line-height: 1.4;
          font-size: 18px;
      }
-    img, svg {
-        max-width: 100%;
-        height: auto;
-    }
 
 
     // from site about

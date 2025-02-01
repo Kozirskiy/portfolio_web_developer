@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {FlexWrapper} from "../FlexWrapper.tsx";
 import {StyledBtn} from "../button/Button.styled.tsx";
+import {themeForProject} from "../styles/Theme.tsx";
 
 export const Form = () => {
     return (
@@ -23,32 +24,35 @@ export const Form = () => {
 const StyledForm = styled.form`
     width: 100%;
     font-family: 'Poppins', serif;
+    gap: 16px;
+    
 `
 const StyledFieldTextarea = styled.textarea`
     resize: none;
     margin-bottom: 16px;
-    border-radius: 16px;
-    background-color: #31313F;
+    border-radius: 8px;
+    background-color: ${themeForProject.colors.colorForItemBg};
     width: 472px;
-    color: #fff;
+    color: ${themeForProject.colors.fontColor};
     min-height: 98px;
     padding: 19px 0 19px 16px;
     border: none;
     font-family: 'Poppins', serif;
-    textarea:active {
-        outline: none;
+    
+    &:focus-visible {
+        outline: ${themeForProject.colors.colorForItemBg};
     }
 `
 const StyledField = styled.input`
     font-family: 'Poppins', serif;
     margin-bottom: 16px;
-    border-radius: 16px;
+    border-radius: 8px;
     border: none;
-    background-color: #31313F;
+    background-color: ${themeForProject.colors.colorForItemBg};
     width: 472px;
     height: 62px;
     padding: 19px 0 19px 16px;
-    color: #fff;
+    color: ${themeForProject.colors.fontColor};
 
     input:active {
         outline: none;

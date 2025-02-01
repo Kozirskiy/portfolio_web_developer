@@ -7,7 +7,7 @@ type ContainerStyledPropsType = {
 
 }
 export const ContainerStyled= styled.div<ContainerStyledPropsType>`
-    width: ${props => props.widthContainer || '1080px'};
+    max-width: ${props => props.widthContainer || '1140px'};
     margin: ${props => props.marginContainer || 'auto'};
     padding: 0 10px;
 `

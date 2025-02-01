@@ -6,11 +6,12 @@ import bgImg from '../../../assets/images/ellipseHeaderBgSVG.svg'
 import {StyledBtn} from "../../../compponents/button/Button.styled.tsx";
 import {Icon} from "../../../compponents/icon/Icon.tsx";
 import {ContainerStyled} from "../../../compponents/container/Container.styled.tsx";
+import {themeForProject} from "../../../compponents/styles/Theme.tsx";
 
 export const Main = () => {
     const [offsetY, setOffsetY] = useState(0);
     const [opacity, setOpacity] = useState(1);
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
 
     const handleScroll = () => {
         setOffsetY(window.scrollY);
@@ -19,22 +20,22 @@ export const Main = () => {
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
-        setTimeout(() => setLoading(false), 1500); // Симуляція завантаження
+        // setTimeout(() => setLoading(false), 1500); // Симуляція завантаження
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    if (loading) {
-        return (
-            <PreloaderWrapper>
-                <Loader />
-            </PreloaderWrapper>
-        );
-    }
+    // if (loading) {
+    //     return (
+    //         <PreloaderWrapper>
+    //             <Loader />
+    //         </PreloaderWrapper>
+    //     );
+    // }
 
     return (
         <StyledMain>
             <ContainerStyled>
-                <FlexWrapper align={'center'}>
+                <FlexWrapper align={'center'} wrap={'wrap'} direction={'norow'}>
                     <StyledOfferInfo>
                         <FlexWrapper direction={'column'} align={'start'}>
                             <MainSpan>Hello, i’m</MainSpan>
@@ -79,32 +80,32 @@ export const Main = () => {
     );
 };
 
-const PreloaderWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: rgb(24, 24, 36);
-
-`;
-
-const Loader = styled.div`
-    width: 50px;
-    height: 50px;
-    border: 5px solid rgb(255, 255, 255);
-    border-top: 5px solid #413880;
-    border-radius: 50%;
-    animation: spin 0.5s linear infinite;
-
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-`;
+// const PreloaderWrapper = styled.div`
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100vh;
+//     background-color: rgb(24, 24, 36);
+//
+// `;
+//
+// const Loader = styled.div`
+//     width: 50px;
+//     height: 50px;
+//     border: 5px solid rgb(255, 255, 255);
+//     border-top: 5px solid #413880;
+//     border-radius: 50%;
+//     animation: spin 0.5s linear infinite;
+//
+//     @keyframes spin {
+//         0% {
+//             transform: rotate(0deg);
+//         }
+//         100% {
+//             transform: rotate(360deg);
+//         }
+//     }
+// `;
 
 
 const StyledMain = styled.main`
@@ -142,11 +143,13 @@ const MainSpan = styled.span`
     font-weight: 600;
     margin-bottom: 11px;
     font-size: 32px;
+    color: ${themeForProject.colors.fontColor};
 `
 const MainH2 = styled.h2`
     font-weight: 600;
     font-size: 52px;
     margin-bottom: 10px;
+    color: ${themeForProject.colors.fontColor};
 `
 const StyledPhoto = styled.img`
     display: block;
@@ -174,6 +177,7 @@ const StyledOfferInfo = styled.div`
 const StyledH1 = styled.h1`
     font-size: 18px;
     margin-bottom: 50px;
+    color: ${themeForProject.colors.fontColor};
 `
 
 const StyledBoxImg = styled.div`

@@ -22,7 +22,7 @@ export const Projects = () => {
                                fontSizeTextText={'18px'}
 
                                textComponentP={'I have worked on many projects over the course of being a Web Developer, here are a few of my live, real-world projects'}/>
-                <FlexWrapper justify={'space-between'}>
+                <FlexWrapper justify={'space-between'} wrap={'wrap'} direction={'norow'}>
 
                     <Project
                         projectImg={`${projImg1} 1x, ${projImg1X2} 2x`}
@@ -49,7 +49,7 @@ export const Projects = () => {
 };
 
 export const StyledProjects = styled.section`
-    
+
 `
 
 

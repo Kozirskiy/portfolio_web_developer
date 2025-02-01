@@ -23,8 +23,8 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
     background-color: #181824;
-    display: flex;
-    justify-content: space-between;
+    //display: flex;
+    //justify-content: space-between;
     margin-bottom: 115px;
     align-items: center;
     padding: 20px;

@@ -12,7 +12,7 @@ export const AboutMe = () => {
                 <ContainerStyled>
                     <TitleSection textTitle={'About me:'}/>
                     <TextComponent textComponentP={'Hi, my name is Oleksandr Kozyrskyi, i am a Fullstack web developer'}/>
-                    <FlexWrapper align={'center'} marginBottomStyle={'25px'}>
+                    <FlexWrapper align={'center'} marginBottomStyle={'25px'} >
 
                         <StyledSpan>5+</StyledSpan>
                         <StyledSpanP>Years of experience. Specialised in building apps, while ensuring a seamless web
@@ -26,7 +26,7 @@ export const AboutMe = () => {
                         {/*/>*/}
                     </FlexWrapper>
 
-                    <FlexWrapper>
+                    <FlexWrapper wrap={'wrap'} direction={'norow'} justify={'space-between'}>
                         <ItemAbout iconId={"rulen1iconSVG"} textItemAbout={'UI & UX DESIGNING'}/>
                         <ItemAbout iconId={"codeIconAboutMeSVG"} textItemAbout={'web development'}/>
                         <ItemAbout iconId={"androidIconAboutMeSVG"} textItemAbout={'mobile development'}/>

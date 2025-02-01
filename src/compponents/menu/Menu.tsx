@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {themeForProject} from "../styles/Theme.tsx";
 
 export const Menu = (props: { menuItem: Array<string> }) => {
     return (
@@ -22,14 +23,14 @@ const StyledMenu = styled.nav`
     }
 
     ul li a {
-        color: #7562E0;
         text-decoration: none;
+        color: ${themeForProject.colors.fontColor};
     }
 
     a:hover {
         cursor: pointer;
-        color: #fff;
+        color: ${themeForProject.colors.colorPurpleAct};
         transition: 1s;
-        box-shadow: 3px 3px 3px #7562E0;
+        box-shadow: 2px 2px 2px ${themeForProject.colors.fontColor};
     }
 `

@@ -10,25 +10,26 @@ export const Footer = () => {
     return (
         <StyledFooter>
             <ContainerStyled>
-                <FlexWrapper justify={'space-between'}>
+                <FlexWrapper justify={'space-between'} wrap={'wrap'} direction={'norow'}>
 
                     <StyledFooterContact>
                         <TitleSection textTitle={'Connect with me:'}/>
-                        <TextComponent  textComponentP={'Satisfied with me? Please contact me:'}/>
+                        <TextComponent textComponentP={'Satisfied with me? Please contact me:'}/>
                         <SocialIconList>
                             <SocialIconLink>
                                 <SocialIconItem>
-                                    <Icon iconId={'instagramIconSVG'} width={'32px'} height={'32px'}/>
-                                    <Icon iconId={'facebookIconSVG'} width={'32px'} height={'32px'}/>
-                                    <Icon iconId={'emailIconSVG'} width={'32px'} height={'32px'}/>
+                                    <Icon iconId={'instagramIconSVG'} width={'32px'} height={'32px'}
+                                          viewBox={'0 0 32 32'}/>
+                                    <Icon iconId={'facebookIconSVG'} width={'32px'} height={'32px'}
+                                          viewBox={'0 0 32 32'}/>
+                                    <Icon iconId={'emailIconSVG'} width={'32px'} height={'32px'} viewBox={'0 0 32 32'}/>
                                 </SocialIconItem>
                             </SocialIconLink>
                         </SocialIconList>
                     </StyledFooterContact>
 
                     <StyledFooterForm>
-                        <TextComponent textComponentP={'Contact me, let’s make Magic together:'}
-                                       fontWeight={'700'}/>
+                        <TextComponent textComponentP={'Contact me, let’s make Magic together:'}/>
                         <Form/>
                     </StyledFooterForm>
                 </FlexWrapper>
@@ -44,9 +45,20 @@ const SocialIconLink = styled.li`
 
 `
 const SocialIconItem = styled.a`
+    svg {
+        margin-right: 16px;
+
         &:hover {
             cursor: pointer;
+            transition: 1s;
+            color: #f6eeff;
+            scale: 1.2;
+            transform: translateY(-5px);
         }
+    }
+
+
+
 `
 
 
@@ -54,7 +66,7 @@ const StyledFooter = styled.footer`
     margin-bottom: 50px;
 `
 const StyledFooterContact = styled.div`
-    
+
 `
 const StyledFooterForm = styled.div`
     p {
