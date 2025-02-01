@@ -6,6 +6,11 @@ export  const  themeForProject = {
         colorPurpleAct: '#7562E0',
         colorForItemBg: '#32323F',
         fontColor: '#FFFFFF'
+    },
+
+    media: {
+        tablet: "screen and (max-width: 768px)",
+        mobile: "screen and (max-width: 576px)"
     }
 
 }

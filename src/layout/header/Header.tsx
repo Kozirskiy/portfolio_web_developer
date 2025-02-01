@@ -3,6 +3,7 @@ import {Logo} from "../../compponents/logo/Logo.tsx";
 import {Menu} from "../../compponents/menu/Menu.tsx";
 import {ContainerStyled} from "../../compponents/container/Container.styled.tsx";
 import {FlexWrapper} from "../../compponents/FlexWrapper.tsx";
+import {MobileMenu} from "../../compponents/mobileMenu/MobileMenu.tsx";
 
 
 const items = ['home', 'About', 'Skills', 'Projects', 'Contacts']
@@ -14,7 +15,8 @@ export const Header = () => {
             <ContainerStyled>
                 <FlexWrapper justify={'space-between'} align={'center'}>
                     <Logo/>
-                    <Menu menuItem={items} />
+                    <Menu menuItem={items}/>
+                    <MobileMenu menuItem={items}/>
                 </FlexWrapper>
             </ContainerStyled>
         </StyledHeader>

@@ -16,7 +16,6 @@ export const Menu = (props: { menuItem: Array<string> }) => {
 };
 
 const StyledMenu = styled.nav`
-
     ul {
         display: flex;
         gap: 40px;
@@ -32,5 +31,9 @@ const StyledMenu = styled.nav`
         color: ${themeForProject.colors.colorPurpleAct};
         transition: 1s;
         box-shadow: 2px 2px 2px ${themeForProject.colors.fontColor};
+    }
+
+    @media ${themeForProject.media.tablet} {
+        display: none;
     }
 `
