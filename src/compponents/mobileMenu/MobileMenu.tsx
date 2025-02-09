@@ -5,12 +5,12 @@ export const MobileMenu = (props: { menuItem: Array<string> }) => {
     return (
         <StyledMobileMenu>
 
-            <BurgerButton isOpen={true}>
+            <BurgerButton isOpen={false}>
                 <span></span>
 
             </BurgerButton>
 
-            <MobileMenuPopup isOpen={true}>
+            <MobileMenuPopup isOpen={false}>
                 <ul>
                     {props.menuItem.map((it: string, index: number) => {
                         return <li key={index}>
@@ -96,7 +96,7 @@ const BurgerButton = styled.button<{isOpen: boolean}>`
 `
 const MobileMenuPopup = styled.div<{isOpen: boolean}>`
     position: fixed;
-    background-color: rgba(76, 76, 76, 0.9);
+    background-color: rgba(76, 76, 76, 0.98);
     top: 0;
     right: 0;
     left: 0;

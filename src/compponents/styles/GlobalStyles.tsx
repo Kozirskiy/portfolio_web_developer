@@ -17,7 +17,7 @@ export const GlobalStyles = createGlobalStyle`
         background-color: ${themeForProject.colors.primaryBg};
         font-size: 18px;
         color: ${themeForProject.colors.colorPurpleAct};
-        font-family: "Poppins", serif;
+        font-family: "Poppins", sans-serif;
         font-weight: 400;
         font-style: normal;
     }
@@ -25,10 +25,13 @@ export const GlobalStyles = createGlobalStyle`
     section {
         margin-bottom: 100px;
     }
+    main {
+        margin-bottom: 80px;
+    }
 
     h1, h2, h3, h4, h5, h6, p {
-        font-size: inherit;
-        font-weight: inherit;
+        //font-size: inherit;
+        //font-weight: inherit;
     }
     button {
         background-color: unset;
@@ -51,11 +54,6 @@ export const GlobalStyles = createGlobalStyle`
 
     a:hover {
         text-decoration: none;
-    }
-    
-    h1, h2, h3, h4, h5, h6, p {
-        font-size: inherit;
-        font-weight: inherit;
     }
 
     ul, ul li {

@@ -35,8 +35,8 @@ const StyledLink = styled.a`
 
     & {
         background: unset;
-        
-        padding: 5px;
+        display: flex;
+        padding: 10px;
         border-radius: 50% 0;
         text-align: center;
         //font-size: 20px;

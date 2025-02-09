@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 import styled from "styled-components";
 import {FlexWrapper} from "../../../compponents/FlexWrapper.tsx";
 import photo from '../../../assets/images/photoDinero.webp'
-import bgImg from '../../../assets/images/ellipseHeaderBgSVG.svg'
 import {StyledBtn} from "../../../compponents/button/Button.styled.tsx";
 import {Icon} from "../../../compponents/icon/Icon.tsx";
 import {ContainerStyled} from "../../../compponents/container/Container.styled.tsx";
 import {themeForProject} from "../../../compponents/styles/Theme.tsx";
+import {font} from "../../../compponents/styles/Common.tsx";
 
 export const Main = () => {
     const [offsetY, setOffsetY] = useState(0);
@@ -35,9 +35,10 @@ export const Main = () => {
     return (
         <StyledMain>
             <ContainerStyled>
-                <FlexWrapper align={'center'} wrap={'wrap'} direction={'norow'}>
+
+                <FlexWrapper align={'center'} wrap={'wrap'} direction={'row'} justify={'space-between'}>
                     <StyledOfferInfo>
-                        <FlexWrapper direction={'column'} align={'start'}>
+                        <FlexWrapper direction={'column'} align={'start'} wrap={'wrap'}>
                             <MainSpan>Hello, i’m</MainSpan>
                             <MainH2>Oleksandr Kozyrskyi</MainH2>
                             <div>
@@ -45,17 +46,21 @@ export const Main = () => {
                             </div>
 
                             <StyledBoxBtn>
-                                <StyledBtn alingBtn={'center'} justifyBtn={'center'} widthBnt={'180px'} primary={true} fontSize={'16px'}>
+                                <StyledBtn alingBtn={'center'} justifyBtn={'center'} widthBnt={'180px'} primary={true}
+                                           fontSize={'16px'}>
                                     About me
                                     <StyledSpan>
-                                        <Icon iconId={'userIconHeaderButnSVG'} width="24" height="24" viewBox="0 0 24 24"/>
+                                        <Icon iconId={'userIconHeaderButnSVG'} width="24" height="24"
+                                              viewBox="0 0 24 24"/>
                                     </StyledSpan>
                                 </StyledBtn>
 
-                                <StyledBtn alingBtn={'center'} justifyBtn={'center'} widthBnt={'180px'} outline={true} fontSize={'16px'}>
+                                <StyledBtn alingBtn={'center'} justifyBtn={'center'} widthBnt={'180px'} outline={true}
+                                           fontSize={'16px'}>
                                     Projects
                                     <StyledSpan>
-                                        <Icon iconId={'eyeIconHeaderEyeSVG'} width="24" height="24" viewBox="0 0 24 24"/>
+                                        <Icon iconId={'eyeIconHeaderEyeSVG'} width="24" height="24"
+                                              viewBox="0 0 24 24"/>
                                     </StyledSpan>
                                 </StyledBtn>
                             </StyledBoxBtn>
@@ -63,18 +68,10 @@ export const Main = () => {
                     </StyledOfferInfo>
 
                     <StyledBoxImg>
-                        <StyledPhoto src={photo} alt="photo OK" />
-                        <StyledPhotoBg
-                            src={bgImg}
-                            alt="photo"
-                            style={{
-                                transform: `translate(10%, calc(-40% + ${offsetY * 0.3}px))`,
-                                opacity: opacity,
-                                transition: "transform 0.2s ease-out, opacity 0.5s ease-out"
-                            }}
-                        />
+                        <StyledPhoto src={photo} alt="photo OK"/>
                     </StyledBoxImg>
                 </FlexWrapper>
+
             </ContainerStyled>
         </StyledMain>
     );
@@ -107,10 +104,19 @@ export const Main = () => {
 //     }
 // `;
 
+/*second wrapper*/
+// const StyledFlexGlobalWrapper = styled(FlexWrapper)`
+//
+//     @media ${themeForProject.media.tablet} {
+//
+//     }
+//
+// `
+
 
 const StyledMain = styled.main`
-    padding-top: 200px;
-    min-height: 100vh;
+    margin-top: 150px;
+    min-height: 80vh;
     position: relative;
         &::after {
             content: '';
@@ -119,14 +125,16 @@ const StyledMain = styled.main`
             height: 128px;
             background-color: #181824;
             bottom: 10%;
-            transform: translate(0%, 18%);
+            transform: translate(0%, 8%);
             z-index: 33;
             position: absolute;
+
+                @media ${themeForProject.media.lapTop} {
+                display: none;
+                position: unset;
+            }
         }
-    margin-bottom: 80px;
 `
-
-
 const StyledSpan = styled.span`
     margin-left: 10px;
 
@@ -135,53 +143,59 @@ const StyledSpan = styled.span`
         transition: 2s;
     }
 `
-
 const StyledBoxBtn = styled.div`
 
 `
 const MainSpan = styled.span`
+    ${font({family: "'Poppins', sans serif", weight: 600, Fmax: 32, Fmin: 24, color: themeForProject.colors.fontColor})}
     font-weight: 600;
     margin-bottom: 11px;
-    font-size: 32px;
-    color: ${themeForProject.colors.fontColor};
 `
 const MainH2 = styled.h2`
-    font-weight: 600;
-    font-size: 52px;
+
+    // use mixin for font
+    ${font({family: "'Poppins', sans serif", weight: 600, Fmax: 52, Fmin: 36, color: themeForProject.colors.fontColor})}
+
     margin-bottom: 10px;
     color: ${themeForProject.colors.fontColor};
 `
 const StyledPhoto = styled.img`
-    display: block;
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left: 50%;
-    transform: translate(19%, -50%); /* Центрує зображення */
-    height: auto;
+    z-index: 555;
+    transform: translate(5%, -7%); /* Центрує зображення */
+    @media ${themeForProject.media.lapTopMini} {
+        scale: 0.75;
+    }
+    @media ${themeForProject.media.mobile} {
+        scale: 0.8;
+        position: unset;
+    }
 `
-const StyledPhotoBg = styled.img`
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(10%, -40%); /* Центрує зображення */
-    height: auto;
-    z-index: 1;
-    scale: 0.9;
+const StyledBoxImg = styled.div`
+    &::after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: 486px;
+        height: 486px;
+        border-radius: 50%;
+        background-color: #7562E0;
+        transform: translate(-95%, 8%); /* Центрує зображення */
+        
+        z-index: -55;
+        
+        @media ${themeForProject.media.lapTop} {
+            display: none;
+        }
+    }
 `
+
 const StyledOfferInfo = styled.div`
 
 `
-
 const StyledH1 = styled.h1`
-    font-size: 18px;
+    ${font({family: "'Poppins', sans serif", weight: 600, Fmax: 18, Fmin: 16, color: themeForProject.colors.fontColor})}
     margin-bottom: 50px;
     color: ${themeForProject.colors.fontColor};
 `
 
-const StyledBoxImg = styled.div`
-    display: block;
-    position: relative;
-   
-`
+
