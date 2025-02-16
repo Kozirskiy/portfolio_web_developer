@@ -3,6 +3,7 @@ import {FlexWrapper} from "../FlexWrapper.tsx";
 import {Icon} from "../icon/Icon.tsx";
 import {TitleTextForCardStyled} from "../titleTextForCard/TitleTextForCard.styled.tsx";
 import {TextComponent} from "../textComponent/TextComponent.tsx";
+import {themeForProject} from "../styles/Theme.tsx";
 
 type ItemSkillPropsType = {
     iconId: string
@@ -28,7 +29,8 @@ export const ItemSkill = (props: ItemSkillPropsType) => {
 
 const StyledItemSkill = styled.div`
     border: 3px solid #7562E0;
-    width: 341px;
+    max-width: 341px;
+    width: 95%;
     height: 338px;
     border-radius: 16px;
     background-color: transparent;
@@ -40,6 +42,16 @@ const StyledItemSkill = styled.div`
         transition: 2s;
         cursor: pointer;
         border-radius: 5px;
+    }
+    
+    @media ${themeForProject.media.lapTop} {
+        max-width: 300px;
+        width: 95%;
+    }
+    
+    @media ${themeForProject.media.mobile} {
+        max-width: 270px;
+        width: 95%;
     }
 ;
 

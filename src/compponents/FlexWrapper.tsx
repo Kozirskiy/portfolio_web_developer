@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 type FlexWrapperPropsType = {
     direction?: string
     justify?: string
@@ -26,4 +27,5 @@ export const FlexWrapper = styled.div<FlexWrapperPropsType>`
     margin-bottom: ${props => props.marginBottomStyle};
     height: 100%;
     text-align: ${props => props.textAlign || undefined};
+    
 `

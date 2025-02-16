@@ -3,6 +3,7 @@ import {TitleSection} from "../../../compponents/title/TitleSection.tsx";
 import {ContainerStyled} from "../../../compponents/container/Container.styled.tsx";
 import {FlexWrapper} from "../../../compponents/FlexWrapper.tsx";
 import {ItemSkill} from "../../../compponents/itemSkill/ItemSkill.tsx";
+import {themeForProject} from "../../../compponents/styles/Theme.tsx";
 
 export const Skills = () => {
     return (
@@ -41,4 +42,10 @@ export const Skills = () => {
 
 const StyledSkills = styled.section`
     min-height: 100vh;
+    ${FlexWrapper} {
+        @media ${themeForProject.media.lapTop} {
+            justify-content: space-around;
+            gap: 20px;
+        }
+    }
 `

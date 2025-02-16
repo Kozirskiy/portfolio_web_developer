@@ -10,12 +10,12 @@ import projImg2X2 from '../../../assets/images/featuredProject2x2.png'
 import projImg3X2 from '../../../assets/images/featuredProject3x2.png'
 import {Project} from "./Project.tsx";
 import {FlexWrapper} from "../../../compponents/FlexWrapper.tsx";
+import {themeForProject} from "../../../compponents/styles/Theme.tsx";
 
 export const Projects = () => {
     return (
         <StyledProjects>
             <ContainerStyled>
-
                 <TitleSection textTitle={'Projects:'}/>
 
                 <TextComponent marginBottomTextComponent={'36px'}
@@ -28,6 +28,7 @@ export const Projects = () => {
                         projectImg={`${projImg1} 1x, ${projImg1X2} 2x`}
                         projectTitle={'TWINDER'}
                         projectText={'A live Geolocation app for finding tweets and twitter users around you.'}
+
                     />
 
                     <Project projectImg={`${projImg2} 1x, ${projImg2X2} 2x`}
@@ -49,7 +50,20 @@ export const Projects = () => {
 };
 
 export const StyledProjects = styled.section`
-
+    p{
+        @media ${themeForProject.media.tablet} {
+            font-size: 18px;
+        }
+    }
+    
+    ${FlexWrapper} {
+        @media ${themeForProject.media.lapTop} {
+            justify-content: space-around;
+            
+        }
+    }
+    
+    
 `
 
 

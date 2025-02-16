@@ -8,7 +8,7 @@ type TitleSectionPropsType = {
 
 export const TitleSection = (props: TitleSectionPropsType) => {
     return (
-        <TitleSectionStyled >
+        <TitleSectionStyled {...props}>
             {props.textTitle}
         </TitleSectionStyled>
     );

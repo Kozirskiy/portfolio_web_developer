@@ -3,6 +3,9 @@ import styled from "styled-components";
 import {TitleTextForCardStyled} from "../../../compponents/titleTextForCard/TitleTextForCard.styled.tsx";
 import {FlexWrapper} from "../../../compponents/FlexWrapper.tsx";
 import {StyledBtn} from "../../../compponents/button/Button.styled.tsx";
+import {themeForProject} from "../../../compponents/styles/Theme.tsx";
+import {font} from "../../../compponents/styles/Common.tsx";
+import {TextComponent} from "../../../compponents/textComponent/TextComponent.tsx";
 
 
 type ProjectStyledProps = {
@@ -19,14 +22,13 @@ export const Project = (props: ProjectStyledProps) => {
 
                 </StyledImg>
 
-                <TitleTextForCardStyled fontSizeText={'24px'} colorText={'#7562E0'} >
+                <TitleTextForCardStyled fontSizeText={'24px'} colorText={'#7562E0'}>
                     {props.projectTitle}
                 </TitleTextForCardStyled>
 
 
-                <TitleTextForCardStyled widthTitle={'287px'} fontSizeText={'18px'} marginBottom={'24px'} >
-                    {props.projectText}
-                </TitleTextForCardStyled>
+                <TextComponent textComponentP={props.projectText}/>
+
 
                 <FlexWrapper justify={'space-between'}>
 
@@ -46,9 +48,27 @@ export const Project = (props: ProjectStyledProps) => {
 };
 const StyledProject = styled.div`
     background-color: #31313F;
-    width: 343px;
+    max-width: 343px;
+    width: 95%;
     min-height: 417px;
+    margin-bottom: 20px;
     border-radius: 8px;
+    
+    ${TitleTextForCardStyled} {
+        @media ${themeForProject.media.lapTop} {
+            ${font({family: "'Poppins', sans serif", weight: 600, Fmax: 24, Fmin: 18, color: themeForProject.colors.colorPurpleAct})}
+        }
+    }
+    @media ${themeForProject.media.mobile} {
+        max-width: 280px;
+        width: 99%;
+    }
+    
+    ${StyledBtn} {
+        @media ${themeForProject.media.mobile} {
+            font-size: 14px;
+        }
+    }
 `
 const StyledImg = styled.img`
     border: 2px solid #7562E0;

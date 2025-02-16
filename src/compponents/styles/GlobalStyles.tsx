@@ -20,14 +20,19 @@ export const GlobalStyles = createGlobalStyle`
         font-family: "Poppins", sans-serif;
         font-weight: 400;
         font-style: normal;
+        
+        min-width: 360px;
     }
     
     section {
         margin-bottom: 100px;
+        @media ${themeForProject.media.lapTopMini} {
+            margin-bottom: 50px;
+        }
     }
-    main {
-        margin-bottom: 80px;
-    }
+    //main {
+    //    margin-bottom: 80px;
+    //}
 
     h1, h2, h3, h4, h5, h6, p {
         //font-size: inherit;

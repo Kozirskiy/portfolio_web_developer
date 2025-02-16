@@ -20,7 +20,10 @@ export const StyledBtn = styled.button<StyledBtnPropsType>`
     justify-content: ${props => props.justifyBtn || 'start'};
     align-items: center;
     border-radius: 8px;
-    margin-right: 16px;
+    
+    &:first-child {
+        margin-right: 8px;
+    }
     height: 48px;
     font-weight: ${props => props.fontWeightBtn || 'bold'};
     font-size: ${props => props.fontSize || '1.1rem'};
@@ -30,7 +33,7 @@ export const StyledBtn = styled.button<StyledBtnPropsType>`
         cursor: pointer;
     }
 
-    //primary
+            //primary
     ${props => props.primary && css<StyledBtnPropsType>`
         background-color: ${props => props.colorBGBtn || '#7562E0'};
         color: white;
@@ -42,7 +45,9 @@ export const StyledBtn = styled.button<StyledBtnPropsType>`
             transition: 1.5s;
 
         }
-    `} //outline
+    `} 
+            
+            //outline
     ${props => props.outline && css<StyledBtnPropsType>`
         border: 2px solid ${props => props.colorBGBtn || '#7562E0'};
         background-color: transparent;

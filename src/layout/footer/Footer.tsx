@@ -5,16 +5,16 @@ import {TitleSection} from "../../compponents/title/TitleSection.tsx";
 import {TextComponent} from "../../compponents/textComponent/TextComponent.tsx";
 import {Icon} from "../../compponents/icon/Icon.tsx";
 import {Form} from "../../compponents/form/Form.tsx";
+import {themeForProject} from "../../compponents/styles/Theme.tsx";
 
 export const Footer = () => {
     return (
         <StyledFooter>
             <ContainerStyled>
                 <FlexWrapper justify={'space-between'} wrap={'wrap'} direction={'norow'}>
-
                     <StyledFooterContact>
                         <TitleSection textTitle={'Connect with me:'}/>
-                        <TextComponent textComponentP={'Satisfied with me? Please contact me:'}/>
+                        <TextComponent textComponentP={'Satisfied with me? Please contact me:'} fontSizeTextText={'18px'}/>
                         <SocialIconList>
                             <SocialIconLink>
                                 <SocialIconItem>
@@ -29,7 +29,7 @@ export const Footer = () => {
                     </StyledFooterContact>
 
                     <StyledFooterForm>
-                        <TextComponent textComponentP={'Contact me, let’s make Magic together:'}/>
+                        <TextComponent textComponentP={'Contact me, let’s make Magic together:'} fontSizeTextText={'24px'}/>
                         <Form/>
                     </StyledFooterForm>
                 </FlexWrapper>
@@ -64,12 +64,15 @@ const SocialIconItem = styled.a`
 
 const StyledFooter = styled.footer`
     margin-bottom: 50px;
+    
 `
 const StyledFooterContact = styled.div`
-
+    margin-bottom: 30px;
+    margin-right: 20px;
 `
 const StyledFooterForm = styled.div`
-    p {
-        font-size: 24px;
+    
+    @media ${themeForProject.media.lapTopMini} {
+        margin: 0 auto;
     }
 `

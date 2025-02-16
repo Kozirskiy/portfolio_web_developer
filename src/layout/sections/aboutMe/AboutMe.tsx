@@ -4,6 +4,8 @@ import {FlexWrapper} from "../../../compponents/FlexWrapper.tsx";
 import {ItemAbout} from "../../../compponents/itemAbout/ItemAbout.tsx";
 import {ContainerStyled} from "../../../compponents/container/Container.styled.tsx";
 import {TitleSection} from "../../../compponents/title/TitleSection.tsx";
+import {font} from "../../../compponents/styles/Common.tsx";
+import {themeForProject} from "../../../compponents/styles/Theme.tsx";
 
 export const AboutMe = () => {
     return (
@@ -11,7 +13,10 @@ export const AboutMe = () => {
             <AboutMeStyled>
                 <ContainerStyled>
                     <TitleSection textTitle={'About me:'}/>
-                    <TextComponent textComponentP={'Hi, my name is Oleksandr Kozyrskyi, i am a Fullstack web developer'}/>
+                    <TextComponent textComponentP={'Hi, my name is Oleksandr Kozyrskyi, i am a Fullstack web developer'}
+                        fontSizeTextText={'18px'}
+                    />
+
                     <FlexWrapper align={'center'} marginBottomStyle={'25px'} >
 
                         <StyledSpan>5+</StyledSpan>
@@ -41,25 +46,42 @@ export const AboutMe = () => {
 };
 
 const StyledSpan = styled.span`
-    font-size: 96px;
+    ${font({family: "'Poppins', sans serif", weight: 400, Fmax: 96, Fmin: 36, color: themeForProject.colors.fontColor})}
+   
     font-weight: 600;
     color: #7562E0;
     margin-right: 22px;
+    @media ${themeForProject.media.mobile} {
+        margin-right: 10px;
+    }
+    
 `
 
 const StyledSpanP = styled.span`
-    font-size: 24px;
-    font-weight: 400;
-    color: #fff;
+    ${font({family: "'Poppins', sans serif", weight: 400, Fmax: 24, Fmin: 12, color: themeForProject.colors.fontColor})}
     display: flex;
     text-align: start;
     align-items: flex-start;
+    line-height: 1.6;
+    
+    @media  ${themeForProject.media.tablet} {
+        max-width: 100%;
+    }
+    @media ${themeForProject.media.mobile} {
+        width: 230px;
+        max-width: 100%;
+    }
 `
 const AboutMeStyled = styled.section`
-    
-    p {
-        font-size: 18px;
+    ${FlexWrapper} {
+        @media ${themeForProject.media.lapTopMini} {
+            justify-content: space-around;
+            gap: 20px;
+        }
+        @media ${themeForProject.media.mobile} {
+            justify-content: space-around;
+            gap: 20px;
+        }
     }
-    
 `
 
